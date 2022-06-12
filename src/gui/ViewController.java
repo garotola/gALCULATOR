@@ -3,10 +3,7 @@ package gui;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.ResourceBundle;
-
-import javafx.css.SizeUnits;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -126,7 +123,7 @@ public class ViewController implements Initializable{
     }
 
     private void setTextResult(String text){
-        if(labelResult.getText().equals("0")) labelResult.setText(text);
+        if(labelResult.getText().equals("0.0") || labelResult.getText().equals("0")) labelResult.setText(text);
         else labelResult.setText(labelResult.getText() + text);
     }
 
