@@ -2,6 +2,14 @@
     "java.project.sourcePaths": ["src"],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar"
+        "lib/**/*.jar",
+        "/home/garotola/Documentos/Java/Libs/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx-swt.jar",
+        "/home/garotola/Documentos/Java/Libs/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx.web.jar",
+        "/home/garotola/Documentos/Java/Libs/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx.swing.jar",
+        "/home/garotola/Documentos/Java/Libs/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx.media.jar",
+        "/home/garotola/Documentos/Java/Libs/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx.graphics.jar",
+        "/home/garotola/Documentos/Java/Libs/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx.fxml.jar",
+        "/home/garotola/Documentos/Java/Libs/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx.controls.jar",
+        "/home/garotola/Documentos/Java/Libs/openjfx-18.0.1_linux-x64_bin-sdk/javafx-sdk-18.0.1/lib/javafx.base.jar"
     ]
 }

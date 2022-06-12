@@ -6,26 +6,25 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="253.0" prefWidth="296.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="253.0" prefWidth="296.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ViewController">
    <children>
-      <Button alignment="CENTER" layoutX="11.0" layoutY="97.0" minWidth="62.0" mnemonicParsing="false" text="7" />
-      <Button layoutX="11.0" layoutY="138.0" minWidth="62.0" mnemonicParsing="false" text="4" />
-      <Button layoutX="11.0" layoutY="178.0" minWidth="62.0" mnemonicParsing="false" text="1" />
-      <Button layoutX="85.0" layoutY="97.0" minWidth="62.0" mnemonicParsing="false" text="8" />
-      <Button layoutX="85.0" layoutY="138.0" minWidth="62.0" mnemonicParsing="false" text="5" />
-      <Button layoutX="85.0" layoutY="178.0" minWidth="62.0" mnemonicParsing="false" text="2" />
-      <Button layoutX="156.0" layoutY="97.0" minWidth="62.0" mnemonicParsing="false" text="9" />
-      <Button layoutX="156.0" layoutY="138.0" minWidth="62.0" mnemonicParsing="false" text="6" />
-      <Button layoutX="156.0" layoutY="178.0" minWidth="62.0" mnemonicParsing="false" text="3" />
-      <Button layoutX="224.0" layoutY="97.0" minWidth="62.0" mnemonicParsing="false" text="+" />
-      <Button layoutX="224.0" layoutY="138.0" minWidth="62.0" mnemonicParsing="false" text="-" />
-      <Button layoutX="224.0" layoutY="178.0" minWidth="62.0" mnemonicParsing="false" text="*" />
-      <Button layoutX="11.0" layoutY="215.0" minWidth="62.0" mnemonicParsing="false" text="0" />
+      <Button fx:id="buttonDigit7" alignment="CENTER" layoutX="11.0" layoutY="97.0" minWidth="62.0" mnemonicParsing="false" text="7" />
+      <Button fx:id="buttonDigit4" layoutX="11.0" layoutY="138.0" minWidth="62.0" mnemonicParsing="false" text="4" />
+      <Button fx:id="buttonDigit1" layoutX="11.0" layoutY="178.0" minWidth="62.0" mnemonicParsing="false" text="1" />
+      <Button fx:id="buttonDigit8" layoutX="85.0" layoutY="97.0" minWidth="62.0" mnemonicParsing="false" text="8" />
+      <Button fx:id="buttonDigit5" layoutX="85.0" layoutY="138.0" minWidth="62.0" mnemonicParsing="false" text="5" />
+      <Button fx:id="buttonDigit2" layoutX="85.0" layoutY="178.0" minWidth="62.0" mnemonicParsing="false" text="2" />
+      <Button fx:id="buttonDigit9" layoutX="156.0" layoutY="97.0" minWidth="62.0" mnemonicParsing="false" text="9" />
+      <Button fx:id="buttonDigit6" layoutX="156.0" layoutY="138.0" minWidth="62.0" mnemonicParsing="false" text="6" />
+      <Button fx:id="buttonDigit3" layoutX="156.0" layoutY="178.0" minWidth="62.0" mnemonicParsing="false" text="3" />
+      <Button fx:id="buttonSoma" layoutX="224.0" layoutY="97.0" minWidth="62.0" mnemonicParsing="false" text=" + " />
+      <Button fx:id="buttonSub" layoutX="224.0" layoutY="138.0" minWidth="62.0" mnemonicParsing="false" text=" - " />
+      <Button fx:id="buttonMul" layoutX="224.0" layoutY="178.0" minWidth="62.0" mnemonicParsing="false" text=" * " />
+      <Button fx:id="buttonDigit0" layoutX="11.0" layoutY="215.0" minWidth="62.0" mnemonicParsing="false" text="0" />
       <Button layoutX="85.0" layoutY="215.0" minWidth="62.0" mnemonicParsing="false" text="," />
-      <Button layoutX="156.0" layoutY="215.0" minWidth="62.0" mnemonicParsing="false" text="=" />
-      <Button layoutX="224.0" layoutY="215.0" minWidth="62.0" mnemonicParsing="false" text="/" />
-      <Label alignment="CENTER_RIGHT" layoutX="13.0" layoutY="14.0" minWidth="270.0" prefHeight="43.0" prefWidth="270.0" text="0" textAlignment="CENTER">
+      <Button fx:id="buttonResult" layoutX="156.0" layoutY="215.0" minWidth="62.0" mnemonicParsing="false" onAction="#onActionButtonResult" text="=" />
+      <Button fx:id="buttonDiv" layoutX="224.0" layoutY="215.0" minWidth="62.0" mnemonicParsing="false" text=" / " />
+      <Label fx:id="labelResult" alignment="CENTER_RIGHT" layoutX="13.0" layoutY="14.0" minWidth="270.0" prefHeight="43.0" prefWidth="270.0" textAlignment="CENTER">
          <font>
             <Font name="Liberation Mono" size="18.0" />
          </font>
