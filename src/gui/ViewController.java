@@ -1,8 +1,12 @@
 package gui;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 
+import javafx.css.SizeUnits;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -27,6 +31,7 @@ public class ViewController implements Initializable{
     @FXML private Button buttonSub;
     @FXML private Button buttonMul;
     @FXML private Button buttonDiv;
+    
 
     @FXML
     private Button buttonResult;
@@ -35,9 +40,61 @@ public class ViewController implements Initializable{
 
     @FXML
     private void onActionButtonResult(){
-        String expression = labelResult.getText();
-        String[] split = expression.split(" ");
+        double result = 0; String expression; 
+        String[] ops = {"*", "/", "+", "-"};
+        expression = labelResult.getText();
+        ArrayList<String> list = new ArrayList<>(Arrays.asList(expression.split(" ")));
         
+        for (int i = 0; i < ops.length; i+=2) {
+            String op1 = ops[i];
+            String op2 = ops[i + 1];
+            while(list.contains(op1) || list.contains(op2)){
+                int index; String op;
+                int indexOp1 = list.indexOf(op1);
+                int indexOp2 = list.indexOf(op2);
+                if((list.contains(op1) && list.contains(op2) && indexOp1 < indexOp2) || !list.contains(op2)){
+                    op = op1;
+                    index = indexOp1;
+                }else{
+                    op = op2;
+                    index = indexOp2;
+                }
+                result = operation(op, list.get(index - 1),list.get(index + 1));
+                //System.out.println(result);
+                list.set(index, String.valueOf(result));
+                list.remove(index - 1);
+                list.remove(index);
+            }
+        }
+
+        labelResult.setText("0");
+        setTextResult(String.valueOf(result));
+    }
+
+    private double operation(String op, String str1, String str2){
+        double num1 = Double.parseDouble(str1);
+        double num2 = Double.parseDouble(str2);
+
+
+        return switch(op){
+            case "+" -> num1 + num2;
+            case "-" -> num1 - num2;
+            case "*" -> num1 * num2;
+            case "/" -> num1 / num2;
+            default -> 0;
+        };
+        
+    }
+
+    @FXML
+    private void onActionButtonCe(){
+        if(labelResult.getText().length() > 0)
+            labelResult.setText(labelResult.getText().substring(0, labelResult.getText().length() - 1));
+    }
+
+    @FXML
+    private void onActionButtonC(){
+        labelResult.setText("0");
     }
 
     @Override
@@ -63,14 +120,14 @@ public class ViewController implements Initializable{
         return new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent arg0) {
-                setTextResult(button);
+                setTextResult(button.getText());
             }
         };
     }
 
-    private void setTextResult(Button buttonDigit){
-        if(labelResult.getText().equals("0")) labelResult.setText(buttonDigit.getText());
-        else labelResult.setText(labelResult.getText() + buttonDigit.getText());
+    private void setTextResult(String text){
+        if(labelResult.getText().equals("0")) labelResult.setText(text);
+        else labelResult.setText(labelResult.getText() + text);
     }
 
     //Apagar tudo
